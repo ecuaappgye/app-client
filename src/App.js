@@ -8,12 +8,14 @@ import FormMail from "./components/recovery/FormMail";
 import Register from "./components/register/Register";
 import RegisterDriver from "./components/register/RegisterDriver";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import About from "./components/about/About";
 import Home from "./components/home/Home";
 
 function App() {
   return (
     <Router>
-      <div className="">
+      <div >
         <Header />
         <Switch>
           <Route path="/login/register" children={<Register />} />
@@ -21,7 +23,8 @@ function App() {
           <Route path="/login/recovery" children={<FormMail />} />
           <Route path="/home" children={<Home/>} />
           <Route path="/">
-            <Login />
+            <About />
+            <Footer />
           </Route>
         </Switch>
       </div>
