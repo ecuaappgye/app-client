@@ -5,13 +5,15 @@ import { useDispatch } from "react-redux";
 import { fetchTokenThunk } from "../../actions/fetchActions";
 import { Link, useHistory } from "react-router-dom";
 import { postLogin } from "../../services/fetchLogin";
+import { useAuth } from "../../provider/AuthProvider";
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();
+  const { signIn } = useAuth();
 
   const onSubmit = (values) => {
-    console.log(values);
+    // console.log(values);
     dispatch(fetchTokenThunk(values));
     // history.push("/home");
     // postLogin(values)
@@ -51,7 +53,7 @@ const Login = () => {
             <Link to="/login/recovery" className="link-primary text-center">
               Olvidaste tu contraseña?
             </Link>
-            <button className="btn btn-primary mt-5 w-100">
+            <button className="btn btn-primary mt-5 w-100" onClick={onSubmit}>
               Iniciar sesión
             </button>
             <p className="mt-5 mb-3 text-muted text-center">© 2021</p>

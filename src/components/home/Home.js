@@ -8,7 +8,6 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
-import MapViewer from "../map/MapViewer";
 
 const Home = () => {
   return (
@@ -115,7 +114,6 @@ const Home = () => {
         </div>
       </div>
     
-      <MapViewer />
     </div>
   );
 };

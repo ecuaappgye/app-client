@@ -20,16 +20,23 @@ const inputs = [
     id: "addres",
     required: true,
   },
+  {
+    type: "file",
+    name: "Img",
+    id: "form-file",
+    required: true,
+  },
 ];
 const RegisterDriver = () => {
   const { register, handleSubmit } = useForm();
+
   const onSubmit = (values) => {
     alert(JSON.stringify(values));
   };
   const listInput = inputs.map((element) => {
     return (
       <Input
-        type={element.text}
+        type={element.type}
         name={element.name}
         id={element.id}
         register={register}
@@ -43,12 +50,10 @@ const RegisterDriver = () => {
     <div>
       <h2>Registro de conductor</h2>
       <div className="container">
-        <form onSubmit={handleSubmit(onSubmit)}></form>
-        {listInput}
-        <button type="button" className="btn btn-outline-primary">
-          Ingresar
-        </button>
-        <input type="submit" />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {listInput}
+          <button className="btn btn-outline-primary">Ingresar</button>
+        </form>
       </div>
     </div>
   );

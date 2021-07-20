@@ -41,6 +41,21 @@ export const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         errRegister: action.payload,
       };
+    case FETCH_TYPES.fetchCreateDriver:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case FETCH_TYPES.fetchCreateDriverSuccess:
+      return {
+        ...state,
+        isLoading: false,
+      };
+    case FETCH_TYPES.fetchCreateDriverFail:
+      return {
+        ...state,
+        errRegister: action.payload,
+      };
 
     default:
       return state;

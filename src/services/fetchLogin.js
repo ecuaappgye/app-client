@@ -1,6 +1,7 @@
 import axios from "axios";
 //axios.get(api , { headers: {"Authorization" : `Bearer ${token}`} })
-const baseUrl = `https://4781de0e0e06.ngrok.io`;
+const baseUrl = `https://cead5b98a656.ngrok.io`;
+const token = ``
 
 /**Peticion para loguear al usuario */
 export const postLogin = (values) =>
@@ -22,4 +23,9 @@ export const postRegister = (values) =>
     method: "POST",
     url: `${baseUrl}/api/auth/register/`,
     data: values,
+  });
+
+export const postCreateDriver = () =>
+  axios.get(`${baseUrl}/api/driver/get/1/`, {
+    headers: { Authorization: `${token}` },
   });

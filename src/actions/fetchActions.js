@@ -7,6 +7,9 @@ export const FETCH_TYPES = {
   fetchRegister: "fetch_register",
   fetchRegisterSuccess: "fetch_register_success",
   fetchRegisterFail: "fetch_register_fail",
+  fetchCreateDriver: "fetch_create_driver",
+  fetchCreateDriverSuccess: "fetch_create_driver_success",
+  fetchCreateDriverFail: "fetch_create_driver_fail",
 };
 
 /**Petcion para el token */
@@ -50,4 +53,25 @@ export const fetchRegisterThunk = (values) => {
     postRegister(values)
       .then((res) => dispatch(fetchRegisterSuccess(res.data)))
       .catch((err) => dispatch(fetchRegisterFail(err.response)));
+};
+
+
+export const fetchCreateDriver = () => ({
+  type: FETCH_TYPES.fetchCreateDriver,
+});
+/**En caso de peticion exitosa */
+export const fetchCreateDriverSuccess = (values) => ({
+  type: FETCH_TYPES.fetchCreateDriverSuccess,
+  payload: values,
+});
+/**En caso de peticion fallida */
+export const fetchCreateDriverFail = (err) => ({
+  type: FETCH_TYPES.fetchCreateDriverFail,
+  payload: err,
+});
+export const fetchCreateDriverThunk = (values) => {
+  return (dispatch) =>
+    postRegister(values)
+      .then((res) => dispatch(fetchCreateDriverSuccess(res.data)))
+      .catch((err) => dispatch(fetchCreateDriverFail(err.response)));
 };
