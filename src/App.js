@@ -10,12 +10,15 @@ import RegisterDriver from "./components/register/RegisterDriver";
 import Header from "./components/header/Header";
 import About from "./components/about/About";
 import Home from "./components/home/Home";
+import Forms from "./components/form/Form";
+import StepProgress from "./components/stepProgress/StepProgress";
 
 function App() {
   return (
     <Router>
       <div >
-        <Header />
+      <Header/>
+      <StepProgress/>
         <Switch>
           <Route path="/about"children={<About />}/>
           <Route path="/login/register" children={<Register />} />
@@ -24,7 +27,9 @@ function App() {
           <Route path="/home" children={<Home/>} />
           <Route path="/">
           </Route>
+          
         </Switch>
+        <Forms/>
       </div>
     </Router>
   );
