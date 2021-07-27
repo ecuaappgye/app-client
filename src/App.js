@@ -12,13 +12,14 @@ import About from "./components/about/About";
 import Home from "./components/home/Home";
 import Forms from "./components/form/Form";
 import StepProgress from "./components/stepProgress/StepProgress";
+import Dashboard2 from "./components/dashboard/Dashboard2";
 
 function App() {
   return (
     <Router>
       <div >
-      <Header/>
-      <StepProgress/>
+
+      <Dashboard2/>
         <Switch>
           <Route path="/about"children={<About />}/>
           <Route path="/login/register" children={<Register />} />
@@ -27,9 +28,7 @@ function App() {
           <Route path="/home" children={<Home/>} />
           <Route path="/">
           </Route>
-          
         </Switch>
-        <Forms/>
       </div>
     </Router>
   );

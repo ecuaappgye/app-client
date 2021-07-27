@@ -14,7 +14,7 @@ const StepProgress = () => {
                 <div
                   className="progress-bar"
                   role="progressbar"
-                  style={{ width: "50%" }}
+                  style={{ width: "100%" }}
                   aria-valuenow="0"
                   aria-valuemin="0"
                   aria-valuemax="100"
@@ -41,6 +41,7 @@ const StepProgress = () => {
               >
                 3
               </button>
+
             </div>
           </div>
         </div>

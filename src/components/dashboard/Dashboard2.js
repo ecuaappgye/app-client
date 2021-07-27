@@ -1,180 +1,123 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import disponIP from "../../assets/img/disponibleip.png";
+import Dashboard from "./Dashboard.css";
+import { Avatar } from "../../assets/avatar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
+import logoImgMini from "../../assets/img/wayLogomini.png";
+import {
+  faAddressCard,
+  faBars,
+  faCar,
+  faIdCard,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard2 = () => {
+  const [showSidebar, setShowSidebar] = useState("");
+  const [showHeader, setShowHeader] = useState("");
+
+  const show = () => {
+    if (!showSidebar) {
+      setShowHeader("body-pd");
+      setShowSidebar("show");
+      return;
+    }
+    setShowHeader("");
+    setShowSidebar("");
+    return;
+  };
+
   return (
-    <div className="container-fluid">
-      <div className="row flex-nowrap">
-        <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-          <div className="d-flex  flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-            <Link
-              to="/"
-              className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-            >
-              <span className="fs-5 d-none d-sm-inline">Menu</span>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="menu" aria-label="Close"></button>
-            </Link>
-            <ul
-              className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start "
-              id="menu"
-            >
-              <li className="nav-item">
-                <Link to="#" className="nav-link align-middle px-0">
-                  <i className="fs-4 bi-house"></i>{" "}
-                  <span className="ms-1 d-none d-sm-inline text-white">Home</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#submenu1"
-                  data-bs-toggle="collapse"
-                  className="nav-link px-0 align-middle"
-                >
-                  <i className="fs-4 bi-speedometer2"></i>{" "}
-                  <span className="ms-1 d-none d-sm-inline">Dashboard</span>{" "}
-                </Link>
-                <ul
-                  className="collapse show nav flex-column ms-1"
-                  id="submenu1"
-                  data-bs-parent="#menu"
-                >
-                  <li className="w-100">
-                    <Link to="#" className="nav-link px-0">
-                      {" "}
-                      <span className="d-none d-sm-inline">Item</span> 1{" "}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="nav-link px-0">
-                      {" "}
-                      <span className="d-none d-sm-inline">Item</span> 2{" "}
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link to="#" className="nav-link px-0 align-middle">
-                  <i className="fs-4 bi-table"></i>{" "}
-                  <span className="ms-1 d-none d-sm-inline">Orders</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#submenu2"
-                  data-bs-toggle="collapse"
-                  className="nav-link px-0 align-middle "
-                >
-                  <i className="fs-4 bi-bootstrap"></i>{" "}
-                  <span className="ms-1 d-none d-sm-inline">Bootstrap</span>
-                </Link>
-                <ul
-                  className="collapse nav flex-column ms-1"
-                  id="submenu2"
-                  data-bs-parent="#menu"
-                >
-                  <li className="w-100">
-                    <Link to="#" className="nav-link px-0">
-                      {" "}
-                      <span className="d-none d-sm-inline">Item</span> 1
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="nav-link px-0">
-                      {" "}
-                      <span className="d-none d-sm-inline">Item</span> 2
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link
-                  to="#submenu3"
-                  data-bs-toggle="collapse"
-                  className="nav-link px-0 align-middle"
-                >
-                  <i className="fs-4 bi-grid"></i>{" "}
-                  <span className="ms-1 d-none d-sm-inline">Products</span>{" "}
-                </Link>
-                <ul
-                  className="collapse nav flex-column ms-1"
-                  id="submenu3"
-                  data-bs-parent="#menu"
-                >
-                  <li className="w-100">
-                    <Link to="#" className="nav-link px-0">
-                      {" "}
-                      <span className="d-none d-sm-inline">Product</span> 1
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="nav-link px-0">
-                      {" "}
-                      <span className="d-none d-sm-inline">Product</span> 2
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="nav-link px-0">
-                      {" "}
-                      <span className="d-none d-sm-inline">Product</span> 3
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="nav-link px-0">
-                      {" "}
-                      <span className="d-none d-sm-inline">Product</span> 4
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link to="#" className="nav-link px-0 align-middle">
-                  <i className="fs-4 bi-people"></i>{" "}
-                  <span className="ms-1 d-none d-sm-inline">Customers</span>{" "}
-                </Link>
-              </li>
-            </ul>
-            <div className="dropdown pb-4">
-              <Link
-                to="#"
-                className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                id="dropdownUser1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src={disponIP}
-                  alt="hugenerd"
-                  style={{ width: "50px", height: "50px" }}
-                  className="rounded-circle"
-                />
-                <span className="d-none d-sm-inline mx-1">David Romero</span>
+    <div id="body-pd">
+      <header className={`header ${showHeader}`} id="header">
+        <span className="header_toggle" role="button" onClick={() => show()}>
+          <FontAwesomeIcon icon={faBars} id="header-toggle" />
+        </span>
+        <div className="dropdown">
+          <Link
+            to="#"
+            className=" align-items-center text-white text-decoration-none dropdown-toggle"
+            id="dropdownUser1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://github.com/mdo.png"
+              alt=""
+              width="32"
+              height="32"
+              className="rounded-circle me-2"
+            />
+            <strong>David Romero</strong>
+          </Link>
+          <ul
+            className="dropdown-menu dropdown-menu-dark text-small shadow"
+            aria-labelledby="dropdownUser1"
+          >
+            <li>
+              <Link className="dropdown-item" to="#">
+                Nuevos Usuario
               </Link>
-              <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li>
-                  <Link className="dropdown-item" to="">
-                    Administrar
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="">
-                    Configuración
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="">
-                    Perfil
-                  </Link>
-                </li>
-                <li className="dropdown-divider"></li>
-                <li>
-                  <Link className="dropdown-item" to="">
-                    Salir
-                  </Link>
-                </li>
-              </ul>
+            </li>
+            <li>
+              <Link className="dropdown-item" to="#">
+                Configuración
+              </Link>
+            </li>
+            <li>
+              <Link className="dropdown-item" to="#">
+                Perfil
+              </Link>
+            </li>
+            <li className="dropdown-divider"></li>
+            <li>
+              <Link className="dropdown-item" to="#">
+                Salir
+              </Link>
+            </li>
+          </ul>
+        </div>
+        {/*<div className="header_img">
+          <img src="https://i.imgur.com/hczKIze.jpg" alt="" />
+  </div>*/}
+      </header>
+      <div className={`l-navbar ${showSidebar}`} id="nav-bar">
+        <div className="nav">
+          <div>
+            <Link to="#" class="nav_logo">
+              <img
+                src={logoImgMini}
+                className="bx bx-layer nav_logo-icon"
+                alt="Logo way"
+              />
+            </Link>
+            <div className="nav_list">
+              <Link to="#" className="nav_link">
+                <FontAwesomeIcon icon={faCar} size="lg" />
+                <span className="text-decoration-none">Carreras</span>
+              </Link>
+              <Link to="#" className="nav_link">
+                <FontAwesomeIcon icon={faIdCard} size="lg" />
+                <span className="nav_name">Identificación</span>
+              </Link>
+              <Link to="#" className="nav_link">
+                <FontAwesomeIcon icon={faAddressCard} size="lg" />
+                <span className="nav_name">Transacciones</span>
+              </Link>
+              <Link to="#" className="nav_link">
+                <FontAwesomeIcon icon={faFacebook} size="lg" />
+                <span className="nav_name">Libro</span>
+              </Link>
+              <Link to="#" className="nav_link">
+                <FontAwesomeIcon icon={faFacebook} size="lg" />
+                <span className="nav_name">Archivos</span>
+              </Link>
+              <Link to="#" className="nav_link">
+                <FontAwesomeIcon icon={faFacebook} size="lg" />
+                <span className="nav_name">Estatico</span>
+              </Link>
             </div>
           </div>
         </div>
