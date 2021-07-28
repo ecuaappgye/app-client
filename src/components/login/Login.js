@@ -4,13 +4,12 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { fetchTokenThunk } from "../../actions/fetchActions";
 import { Link, useHistory } from "react-router-dom";
-import { postLogin } from "../../services/fetchLogin";
 import { useAuth } from "../../provider/AuthProvider";
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
-  const history = useHistory();
-  const { signIn } = useAuth();
+  // const history = useHistory();
+  // const { signIn } = useAuth();
 
   const onSubmit = (values) => {
     // console.log(values);
@@ -72,6 +71,8 @@ const Login = () => {
             </Link>
           </div> */}
         </div>
+
+        <Link to="/register/driver/personales">driver</Link>
       </div>
 
       <div className="col-md-8 d-flex flex-column justify-content-center w-50 ps-4">

@@ -8,57 +8,58 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
+import MapViewer from "../map/MapViewer";
 
 const Home = () => {
   return (
     <div className="">
       <div
-        class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark vh-100"
+        className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark vh-100"
         style={{ width: "280px" }}
       >
         <Link
-          href="/"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+          to="/"
+          className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
         >
-          <span class="fs-4">Way</span>
+          <span className="fs-4">Way</span>
         </Link>
         <hr />
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <Link href="#" class="nav-link active" aria-current="page">
-              <svg class="bi me-2" width="16" height="16">
+        <ul className="nav nav-pills flex-column mb-auto">
+          <li className="nav-item">
+            <Link to="#" className="nav-link active" aria-current="page">
+              <svg className="bi me-2" width="16" height="16">
                 <FontAwesomeIcon icon={faHome} />
               </svg>
               Home
             </Link>
           </li>
           <li>
-            <Link href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
+            <Link to="#" className="nav-link text-white">
+              <svg className="bi me-2" width="16" height="16">
                 <FontAwesomeIcon icon={faMapMarkedAlt} />
               </svg>
               Dashboard
             </Link>
           </li>
           <li>
-            <Link href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
+            <Link to="#" className="nav-link text-white">
+              <svg className="bi me-2" width="16" height="16">
                 <FontAwesomeIcon icon={faTh} />
               </svg>
               Orders
             </Link>
           </li>
           <li>
-            <Link href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
+            <Link to="#" className="nav-link text-white">
+              <svg className="bi me-2" width="16" height="16">
                 <FontAwesomeIcon icon={faBorderAll} />
               </svg>
               Products
             </Link>
           </li>
           <li>
-            <Link href="#" class="nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
+            <Link to="#" className="nav-link text-white">
+              <svg className="bi me-2" width="16" height="16">
                 <FontAwesomeIcon icon={faUserCircle} />
               </svg>
               Customers
@@ -66,10 +67,10 @@ const Home = () => {
           </li>
         </ul>
         <hr />
-        <div class="dropdown">
+        <div className="dropdown">
           <Link
-            href="#"
-            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            to="#"
+            className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
             id="dropdownUser1"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -79,34 +80,34 @@ const Home = () => {
               alt=""
               width="32"
               height="32"
-              class="rounded-circle me-2"
+              className="rounded-circle me-2"
             />
             <strong>mdo</strong>
           </Link>
           <ul
-            class="dropdown-menu dropdown-menu-dark text-small shadow"
+            className="dropdown-menu dropdown-menu-dark text-small shadow"
             aria-labelledby="dropdownUser1"
           >
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link className="dropdown-item" to="#">
                 New project...
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link className="dropdown-item" to="#">
                 Settings
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link className="dropdown-item" to="#">
                 Profile
               </Link>
             </li>
             <li>
-              <hr class="dropdown-divider" />
+              <hr className="dropdown-divider" />
             </li>
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link className="dropdown-item" to="#">
                 Sign out
               </Link>
             </li>
@@ -114,6 +115,7 @@ const Home = () => {
         </div>
       </div>
     
+      <MapViewer />
     </div>
   );
 };
