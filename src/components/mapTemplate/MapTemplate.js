@@ -3,6 +3,7 @@ import {
   faBars,
   faCar,
   faCommentAlt,
+  faEllipsisH,
   faInfo,
   faMapMarked,
   faMapMarkedAlt,
@@ -45,7 +46,7 @@ const MapTemplate = () => {
                 className="btn btn-success btn-circle btn-lg"
                 onClick={() => descButton()}
               >
-                <FontAwesomeIcon icon={faBars} />
+                <FontAwesomeIcon icon={faEllipsisH} />
               </button>
             </div>
             <div className={`d-flex ${desactiveButton}`}>
