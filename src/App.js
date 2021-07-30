@@ -12,14 +12,16 @@ import About from "./components/about/About";
 import Home from "./components/home/Home";
 import Forms from "./components/form/Form";
 import StepProgress from "./components/stepProgress/StepProgress";
-import Dashboard2 from "./components/dashboard/Dashboard2";
+import Dashboard from "./components/dashboard/Dashboard";
+import DriverInformation from "./components/DriverInformation/DriverInformation";
+import MapTemplate from "./components/mapTemplate/MapTemplate";
+
 
 function App() {
   return (
     <Router>
       <div >
-
-      <Dashboard2/>
+      <MapTemplate/>
         <Switch>
           <Route path="/about"children={<About />}/>
           <Route path="/login/register" children={<Register />} />
